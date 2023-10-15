@@ -1,0 +1,276 @@
+---
+title: "Porównanie dokładności różnych źródeł pokrycia terenu i użytkowania ziemi na przykładzie miasta Poznań i powiatu poznańskiego"
+title-slide-attributes:
+  data-background-image: ryciny/ikony/background.png
+  data-background-size: cover
+  data-background-opacity: "0.08"
+  data-background-color: "#cee4d5"
+author: 
+  - "Adrian Nowacki"
+  - "Sekcja Geoinformacji SKNG, Uniwersytet im. Adama Mickiewicza w Poznaniu"
+subtitle: "III Ogólnopolska Konferencja Studentów Geoinformatyki i Teledetekcji"
+date: 30-10-2023
+format: 
+  revealjs:
+    slide-number: true
+    show-slide-number: all
+    css: style/style.css
+    width: 1400
+footer: <https://rstudio-conf-2022.github.io/get-started-quarto//>
+editor: visual
+---
+
+## Obszar badań
+
+![](ryciny/mapy/obszar_badan.png){fig-align="center"}
+
+## Źródła danych
+
+::: columns
+::: {.column .tabela_zrodla width="33%" style="font-size:60%;"}
+::: {.fragment fragment-index="1"}
+-   CORINE Land Cover (CLC)
+:::
+
+::: {.fragment fragment-index="1"}
+-   Urban Atlas
+:::
+:::
+
+::: {.column .tabela_zrodla width="33%" style="font-size:60%;"}
+::: {.fragment fragment-index="1"}
+-   Esri Land Cover
+:::
+
+::: {.fragment fragment-index="1"}
+-   LUCAS
+:::
+:::
+
+::: {.column .tabela_zrodla width="33%" style="font-size:60%;"}
+::: {.fragment fragment-index="1"}
+-   Sentinel-2 Global Land Cover
+:::
+
+::: {.fragment fragment-index="1"}
+-   ESA WorldCover
+:::
+:::
+:::
+
+::: {.fragment fragment-index="2" style="width:777px;margin:auto!important;"}
+![](ryciny/wykresy/tabela_zrodel.png){fig-align="center"}
+:::
+
+## Reklasyfikacja danych
+
+![](ryciny/wykresy/klasyfikacja.png){fig-align="center"}
+
+## Dane po reklasyfikacji
+
+::: columns
+::: {.column .mapy_reclass width="40%" style="font-size:60%;"}
+BDOT10k ![](ryciny/mapy/BDOT_2.png){fig-align="center"}
+:::
+
+::: {.column .legenda_reclass width="20%" style="font-size:60%;"}
+![](ryciny/mapy/legenda.png){fig-align="center"}
+:::
+
+::: {.column .mapy_reclass width="40%" style="font-size:60%;"}
+::: {.fragment .absolute .fade-in-then-out fragment-index="1"}
+CORINE Land Cover ![](ryciny/mapy/CLC_2.png){fig-align="center"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out fragment-index="2"}
+ESA World Cover ![](ryciny/mapy/ESA_2.png){fig-align="center"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out fragment-index="3"}
+Esri Land Cover ![](ryciny/mapy/ESRI_2.png){fig-align="center"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out fragment-index="4"}
+LUCAS ![](ryciny/mapy/LUCAS_2.png){fig-align="center"}
+:::
+
+::: {.fragment .absolute .fade-in-then-out fragment-index="5"}
+Sentinel-2 GLC ![](ryciny/mapy/SENTINEL_2.png){fig-align="center"}
+:::
+
+::: {.fragment .absolute .fade-in fragment-index="6"}
+Urban Atlas ![](ryciny/mapy/URBAN_ATLAS_2.png){fig-align="center"}
+:::
+:::
+:::
+
+## Wyniki - Procentowy udział klas po reklasyfikacji dla wszystkich źródeł danych
+
+::: columns
+::: {.column .legenda_reclass width="40%" style="font-size:45%;margin-top:20px"}
+::: {.fragment .fade-in fragment-index="2"}
+-   Przeszacowanie zabudowy przez zbiór Esri (8% i 22%)
+:::
+
+</br>
+
+::: {.fragment .fade-in fragment-index="3"}
+-   Najbardziej niedoszacowaną klasą zostały obszary trawiaste i krzewiaste w zbiorze Esri
+:::
+
+</br>
+
+::: {.fragment .fade-in fragment-index="4"}
+-   Przeszacowanie obszarów leśnych przez zbiór ESA o 10% i 24%
+:::
+
+</br>
+
+::: {.fragment .fade-in fragment-index="5"}
+-   Obszary podmokłe przeszacowane przez zbiór Sentinel-2 6-krotnie oraz 25-krotnie
+:::
+:::
+
+::: {.column .wykres_30 width="40%" style="font-size:70%;"}
+::: {.fragment .fade-in fragment-index="1"}
+Aglomeracja <iframe src="ryciny/wykresy_interaktywne/poprawne/udzial_proc_aglo.html" width="100%" height="550px"></iframe>
+:::
+:::
+
+::: {.column width="60%" style="font-size:70%;text-align:center!important;"}
+::: {.fragment .fade-in fragment-index="1"}
+miasto Poznań <iframe src="ryciny/wykresy_interaktywne/poprawne/udzial_proc_poznan.html" width="100%" height="550px"></iframe>
+:::
+:::
+:::
+
+## Wyniki - Zgodność z BDOT10k
+
+::: columns
+::: {.column width="50%" style="font-size:70%;text-align:center!important;"}
+Aglomeracja <iframe src="ryciny/wykresy_interaktywne/poprawne/zgodnosc_aglo.html" width="100%" height="250px"></iframe>
+
+miasto Poznań <iframe src="ryciny/wykresy_interaktywne/poprawne/zgodnosc_poznan.html" width="100%" height="250px"></iframe>
+:::
+
+::: {.column width="50%" style="font-size:70%;text-align:center!important;"}
+![](ryciny/mapy/mapa_zgodnosc_2.png){fig-align="center"}
+:::
+:::
+
+## Wyniki -  Dokładność oraz wskaźnik Kappa dla porównywanych źródeł
+
+<iframe class="iframe_table" src="ryciny/wykresy_interaktywne/poprawne/tabela_kappa.html" width="100%" height="800px" style = "margin-top:50px!important;"></iframe>
+
+## Wyniki - Procentowy udział niepoprawnie zaklasyfikowanych klas
+
+::: columns
+::: {.column .wykres_40 width="40%" style="font-size:70%;text-align:center!important;"}
+Aglomeracja <iframe src="ryciny/wykresy_interaktywne/poprawne/error_aglo.html" width="100%" height="600px"></iframe>
+:::
+
+::: {.column .wykres_60 width="60%" style="margin-top:5px; font-size:70%;text-align:center!important;"}
+miasto Poznań <iframe src="ryciny/wykresy_interaktywne/poprawne/error_poznan.html" width="100%" height="600px"></iframe>
+:::
+:::
+
+## Wyniki - Wskaźniki dokładności klasyfikacji
+
+Aglomeracja <iframe id="iframe_table" src="ryciny/wykresy_interaktywne/poprawne/tabela_aglo.html" width="100%" height="250px"></iframe>
+
+miasto Poznań <iframe class="iframe_table" src="ryciny/wykresy_interaktywne/poprawne/tabela_poznan.html" width="100%" height="250px"></iframe>
+
+## Podsumowanie
+
+::: columns
+::: {.column style="font-size:60%;text-align:left!important;"}
+::: {.fragment .fade-in fragment-index="1"}
+-   Większa zgodność oraz dokładność zbiorów i klas na obszarze aglomeracji
+:::
+
+::: {.fragment .fade-in fragment-index="2"}
+-   Najdokładniejszym źródłem na terenie miasta okazał się Urban Atlas, na obszarze aglomeracji natomiast - LUCAS
+:::
+
+::: {.fragment .fade-in fragment-index="3"}
+-   Na obu obszarach najmniej dokładną klasą zostały tereny podmokłe
+:::
+
+::: {.fragment .fade-in fragment-index="4"}
+-   Najdokładniejszą klasą zostały obszary wodne, następnie pola uprawne i lasy
+:::
+
+::: {.fragment .fade-in fragment-index="5"}
+-   Uzyskana dokładność jest zależna od sposobu reklasyfikacji oraz rozdzielczości i przeznaczenia zbioru danych
+:::
+
+::: {.fragment .fade-in fragment-index="6"}
+-   Istnieje zdecydowana zależność pomiędzy zgodnością i dokładnością klas a konfiguracją i kompozycją krajobrazu
+:::
+
+:::
+
+::: {.column style="font-size:80%;text-align:left!important;"}
+###### Materiały
+
+**Projekt:** [sekcja-geoinformacji-uam.github.io/LULC_stat](https://sekcja-geoinformacji-uam.github.io/LULC_stat/)
+
+**Prezentacja:** [rstudio-conf-2022.github.io](https://rstudio-conf-2022.github.io/get-started-quarto/)
+
+###### Kontakt
+
+adriannowacki007@gmail.com
+
+sekcja.geoinformacji.skng@gmail.com
+
+</br>
+
+::: columns
+
+::: {.column .wykres_48 style="font-size:60%;text-align:center!important;"}
+
+<a href="https://www.instagram.com/sekcja_geoinformacji_uam/">
+  <img src="ryciny/ikony/instagram.png" width = 40px alt="Instagram">
+</a>
+
+[/sekcja_geoinformacji_uam](https://www.instagram.com/sekcja_geoinformacji_uam/)
+
+</br>
+
+<a href="https://github.com/sekcja-geoinformacji-uam/">
+  <img src="ryciny/ikony/github.png" width = 40px alt="Github">
+</a>
+
+
+[/sekcja-geoinformacji-uam](https://github.com/sekcja-geoinformacji-uam/)
+
+:::
+
+
+
+::: {.column .wykres_48 style="font-size:60%;text-align:center!important;"}
+
+<a href="https://www.facebook.com/SekcjaGeoinformacjiUam/">
+  <img src="ryciny/ikony/fb.png" width = 40px alt="Facebook">
+</a>
+
+[/SekcjaGeoinformacjiUam](https://www.facebook.com/SekcjaGeoinformacjiUam/)
+
+</br>
+
+
+<a href="https://sekcjageoinformacji.amu.edu.pl/">
+  <img src="ryciny/ikony/web.png" width = 40px alt="Web">
+</a>
+
+[/sekcjageoinformacji.amu.edu.pl](https://sekcjageoinformacji.amu.edu.pl/)
+
+:::
+
+
+:::
+
+
+
+:::
+:::
