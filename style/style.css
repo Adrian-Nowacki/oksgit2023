@@ -11,9 +11,20 @@
 }
 #title-slide .author, .date{
     font-size:45%!important;
-    text-align:left;
+    text-align:left!important;
     line-height: 0.7;
 }
+
+.quarto-title-authors {
+    font-size:45%!important;
+    text-align:left;
+    display: block!important;
+    justify-content: left!important;
+}
+.quarto-title-author {
+    padding-left:0!important;
+}
+
 .reveal .footer a{
     text-align:center!important;
     color:#333333!important;
